@@ -10,7 +10,7 @@ export default function App() {
   const {Navigator, Screen} = createStackNavigator();
   return (
            <NavigationContainer style={styles.container}>
-            <Navigator initialRouteName="List" >
+            <Navigator initialRouteName="List" style={styles}>
               <Screen name='List' component={ContactList}/>
               <Screen name='Profile' component={CustomerProfile}/>
             </Navigator>
@@ -20,7 +20,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    padding: 24,
     backgroundColor: "#EAEAEA",
-
   },
 });

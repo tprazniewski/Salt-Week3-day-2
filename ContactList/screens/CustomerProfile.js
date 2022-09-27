@@ -6,6 +6,7 @@ import {View} from 'react-native'
 
 function CustomerProfile(route, props) {
 
+    console.log(route.params)
     return (
 
     <View style={styles.container} >
