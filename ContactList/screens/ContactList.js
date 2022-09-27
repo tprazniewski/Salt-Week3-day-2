@@ -1,29 +1,34 @@
 import React from "react";
 import { Text, StyleSheet,FlatList } from "react-native";
 import { customers } from "../data/customers";
-import { View } from "react-native";
+import { View, Button } from "react-native";
+import { useState } from "react";
 
-function CustomerProfile(props) {
+function ContactList({navigation}) {
+  // const [user, setUser] = useState(customers);
+
   return (
-    <View style={styles.container}>
+    <View>
       <FlatList
         keyExtractor={(item, index) => index.toString()}
         contentContainerStyle={styles.contactList}
         data={customers}
+        // data={user}
         renderItem={({ item }) => (
-          <Text onPress={() => props.navigation.navigate("Profile", item)}>
-            {item.name.first + " " + item.name.last}
-          </Text>
+          <Button
+            title={item.name.first}
+            onPress={() => navigation.navigate("Profile", item)}
+          />
         )}
       />
     </View>
-    // <View style={styles.container}>
-    //    {customers.map((e)=> <Text onPress={()=> props.navigation.navigate('Profile')} > {e.name.first} {e.name.last} </Text>) }
-    // </View>
+ 
   );
 }
-
-export default CustomerProfile;
+{/* <View style={styles.container}>
+{customers.map((e)=> <Text onPress={()=> navigation.navigate('Profile',{id: "hejlo"})} > {e.name.first} {e.name.last} </Text>) }
+</View> */}
+export default ContactList;
 
 const styles = StyleSheet.create({
   container: {

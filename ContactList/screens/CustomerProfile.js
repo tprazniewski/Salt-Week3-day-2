@@ -4,13 +4,17 @@ import {customers} from '../data/customers'
 import {View} from 'react-native'
 
 
-function CustomerProfile(route, props) {
-
-    console.log(route.params)
+// function CustomerProfile( {route, navigation}) {
+function CustomerProfile( prop) {
+    const customer = prop.route.params
+    console.log(customer)
     return (
 
     <View style={styles.container} >
-        {customers.map((e)=> <Image onPress={()=> props.navigation.navigate('Name')} source={{uri: e.picture.medium}} style={styles.logo}/>) }
+        <Image source={{uri: customer.picture.medium}} style={styles.logo}/>
+        <Text> {customer.name.first + " " + customer.name.last}</Text>
+        <Text> {customer.email}</Text>
+        <Text> {customer.phone}</Text>
     </View>
   )
 }
@@ -22,7 +26,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#fff',
-      alignItems: 'left',
+      alignItems: 'center',
       justifyContent: 'center',
 
     },
