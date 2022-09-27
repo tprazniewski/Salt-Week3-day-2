@@ -5,7 +5,6 @@ import {View} from 'react-native'
 
 
 function CustomerProfile(route, props) {
-    console.log(gender)
 
     return (
 
