@@ -9,27 +9,18 @@ export default function App() {
 
   const {Navigator, Screen} = createStackNavigator();
   return (
-    <>
-      <View style={styles.container}>
-        <SafeAreaView>
-           <NavigationContainer>
-            <Navigator>
-              <Screen name='Name' component={ContactList}/>
-              <Screen name='Surname' component={CustomerProfile}/>
+           <NavigationContainer style={styles.container}>
+            <Navigator initialRouteName="List" >
+              <Screen name='List' component={ContactList}/>
+              <Screen name='Profile' component={CustomerProfile}/>
             </Navigator>
-          </NavigationContainer> 
-        </SafeAreaView>
-      </View>
-    
-    </>
+          </NavigationContainer>     
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    // justifyContent: 'center',
+    backgroundColor: "#EAEAEA",
+
   },
 });

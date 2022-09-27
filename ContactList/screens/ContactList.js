@@ -7,8 +7,8 @@ import {View} from 'react-native'
 function ContactName(props) {
   return (
 
-    <View >
-        {customers.map((e)=> <Text onPress={()=> props.navigation.navigate('Surname')} > {e.name.first} {e.name.last} {e.gender}</Text>) }
+    <View style={styles.container}>
+        {customers.map((e)=> <Text onPress={()=> props.navigation.navigate('Profile')} > {e.name.first} {e.name.last} </Text>) }
     </View>
   )
 }
@@ -17,14 +17,9 @@ export default ContactName
 
 const styles = StyleSheet.create({
     container: {
-      // flex: 1,
-      // backgroundColor: '#fff',
-      // alignItems: 'center',
-      // justifyContent: 'center',
-      
-    },
-    textContainer: {
-      // flexDirection: 'column',
-      // justifyContent: 'space-between'
-    },
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'top',
+
+    }
   });
